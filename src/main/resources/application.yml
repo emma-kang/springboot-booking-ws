@@ -4,7 +4,7 @@ server:
 # database settings
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/studyroom
-    username: postgres
-    password:
+    url: jdbc:postgresql://[DB_HOST]:5432/[Database]
+    username: [DB_USER_NAME]
+    password: [PASSWORD]
     driver-class-name: org.postgresql.Driver
