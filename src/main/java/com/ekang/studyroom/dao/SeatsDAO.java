@@ -16,12 +16,15 @@ public class SeatsDAO {
 
     public SeatsDAO() {}
 
+    public List<SeatsDTO> getAllSeats() {
+        return sqlSession.selectList(NAMESPACE + "getAllSeats");
+    }
     public SeatsDTO getSeatsByID(int id) {
         return sqlSession.selectOne(NAMESPACE + "getSeatsByID", id);
     }
-
-    public List<SeatsDTO> getAllSeats() {
-        return sqlSession.selectList(NAMESPACE + "getAllseats");
+    public List<SeatsDTO> getSeatsByRoomID(int roomId) {
+        return sqlSession.selectList(NAMESPACE + "getSeatsByRoomID", roomId);
     }
+
 
 }

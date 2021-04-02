@@ -3,10 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ekang.studyroom.mapper.SeatsMapper">
+    <select id="getAllSeats" resultType="com.ekang.studyroom.dto.SeatsDTO">
+        select * from seats
+    </select>
     <select id="getSeatsByID" resultType="com.ekang.studyroom.dto.SeatsDTO">
         select * from seats where seat_id = #{id}
     </select>
-    <select id="getAllSeats" resultMap="com.ekang.studyroom.dto.SeatsDTO">
-        select * from seats
+    <select id="getSeatsByRoomID" resultType="com.ekang.studyroom.dto.SeatsDTO">
+        select * from seats where room_id = #{roomId}
     </select>
 </mapper>
