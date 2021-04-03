@@ -1,4 +1,4 @@
-package com.ekang.studyroom.utils;
+package com.ekang.studyroom.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
