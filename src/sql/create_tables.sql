@@ -70,12 +70,8 @@ create table booking
 create index booking_idx_start_time on booking (start_time);
 create index booking_idx_end_time on booking (end_time);
 
-create table credential
-(
-    id serial primary key,
-    user_id int not null,
-    user_name varchar(20) not null,
-    passwords varchar(100) not null,
-    entry_time timestamp default current_timestamp,
-    constraint fk_users foreign key (user_id) references users(user_id)
-);
+alter table users
+add column email varchar(50) not null;
+
+alter table users
+add column passwords varchar(100) not null;

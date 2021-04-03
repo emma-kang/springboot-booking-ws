@@ -15,11 +15,14 @@ public class UsersDTO {
     private String firstName;
     private String lastName;
     private boolean isActive;
+    private String email;
+    private String passwords;
 
-    public UsersDTO(int id, Date createDate, String firstName, String lastName) {
-        this.userId = id;
+    public UsersDTO(Date createDate, String firstName, String lastName, String email, String passwords) {
         this.createDate = createDate;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
+        this.passwords = passwords;
     }
 }
