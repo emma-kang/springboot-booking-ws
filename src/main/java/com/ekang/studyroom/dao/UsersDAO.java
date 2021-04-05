@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class UsersDAO {
@@ -16,5 +17,7 @@ public class UsersDAO {
 
     public List<UsersDTO> getAllUsers() { return sqlSession.selectList(NAMESPACE + "getAllUsers"); }
     public UsersDTO getUserByID(int id) { return sqlSession.selectOne(NAMESPACE + "getUserById", id); }
-
+    public int createUser(UsersDTO usersDTO) {
+        return sqlSession.insert(NAMESPACE + "createUser", usersDTO);
+    }
 }

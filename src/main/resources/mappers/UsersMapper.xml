@@ -9,11 +9,11 @@
     <select id="getUserById" resultType="com.ekang.studyroom.dto.UsersDTO">
         SELECT * FROM users WHERE user_id = #{id}
     </select>
-    <insert id="createUser" parameterType="com.ekang.studyroom.dto.UsersDTO">
-        INSERT INTO users (create_date, first_name, last_name, is_active)
-        VALUES (current_date, #{firstName}, #{lastName}, #{isActive})
+    <insert id="createUser" parameterType="com.ekang.studyroom.dto.UsersDTO" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO users (create_date, first_name, last_name, is_active, email, passwords)
+        VALUES (current_date, #{firstName}, #{lastName}, #{isActive}, #{email}, #{passwords})
     </insert>
-    <delete id="deleteUserById" parameterType="int">
-        DELETE FROM users WHERE user_id = #{id}
-    </delete>
+    <update id="deleteUserById" parameterType="int">
+        UPDATE users SET is_active = false WHERE user_id = #{id}
+    </update>
 </mapper>
