@@ -14,8 +14,6 @@ public class SeatsDAO {
     @Autowired
     private SqlSession sqlSession;
 
-    public SeatsDAO() {}
-
     public List<SeatsDTO> getAllSeats() {
         return sqlSession.selectList(NAMESPACE + "getAllSeats");
     }
