@@ -16,8 +16,11 @@ import java.util.List;
 public class SeatsRestController {
     final static Logger logger = LoggerFactory.getLogger(SeatsRestController.class);
 
-    @Autowired
-    private SeatsDAO seatsDAO;
+    private final SeatsDAO seatsDAO;
+
+    public SeatsRestController(SeatsDAO seatsDAO) {
+        this.seatsDAO = seatsDAO;
+    }
 
     @GetMapping(path="/seats")
     public @ResponseBody List<SeatsDTO> getAllSeats() {
