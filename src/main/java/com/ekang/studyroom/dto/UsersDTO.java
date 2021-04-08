@@ -15,7 +15,8 @@ public class UsersDTO {
     private String email;
     private String passwords;
 
-    public UsersDTO(String firstName, String lastName, boolean isActive, String email, String passwords) {
+    public UsersDTO(int userId, String firstName, String lastName, boolean isActive, String email, String passwords) {
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.isActive = isActive;
