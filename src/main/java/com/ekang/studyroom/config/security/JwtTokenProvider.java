@@ -1,4 +1,4 @@
-package com.ekang.studyroom.utils;
+package com.ekang.studyroom.config.security;
 
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
@@ -17,7 +17,7 @@ public class JwtTokenProvider implements AuthTokenProvider {
     private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
 
     private static final String SECRET_KEY = "SOME_SECRET_KEY";
-    private static final long EXPIRATION_MS = 1000 * 60 * 60 * 10;
+    private static final long EXPIRATION_MS = 1000 * 60 * 10; // valid for 10 min
 
     @Override
     public String parseTokenString(HttpServletRequest request) {
@@ -30,12 +30,12 @@ public class JwtTokenProvider implements AuthTokenProvider {
     }
 
     @Override
-    public JwtAuthToken issue(Long userId) {
+    public JwtAuthToken issue(int userId) {
         return JwtAuthToken.builder().token(buildToken(userId)).build();
     }
 
     // generate Jwt token
-    private String buildToken(Long userId) {
+    private String buildToken(int userId) {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime expired = now.plus(EXPIRATION_MS, ChronoUnit.MILLIS);
         return Jwts.builder()

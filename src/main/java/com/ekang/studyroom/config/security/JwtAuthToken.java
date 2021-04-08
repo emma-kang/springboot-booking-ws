@@ -1,4 +1,4 @@
-package com.ekang.studyroom.utils;
+package com.ekang.studyroom.config.security;
 
 import lombok.Builder;
 import lombok.Getter;
