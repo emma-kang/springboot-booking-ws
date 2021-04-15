@@ -11,8 +11,6 @@ import java.util.Map;
 @Repository
 public class UsersDAO {
     protected static final String NAMESPACE = "com.ekang.studyroom.mapper.UsersMapper.";
-
-    // @Autowired
     private final SqlSession sqlSession;
 
     public UsersDAO(SqlSession sqlSession) {
@@ -21,9 +19,7 @@ public class UsersDAO {
 
     public List<UsersDTO> getAllUsers() { return sqlSession.selectList(NAMESPACE + "getAllUsers"); }
     public UsersDTO getUserByID(int id) { return sqlSession.selectOne(NAMESPACE + "getUserById", id); }
-    public int createUser(UsersDTO usersDTO) {
-       return sqlSession.insert(NAMESPACE + "createUser", usersDTO);
-    }
+    public int createUser(UsersDTO usersDTO) { return sqlSession.insert(NAMESPACE + "createUser", usersDTO); }
     public UsersDTO getUserByEmail(String email) {
         return sqlSession.selectOne(NAMESPACE + "getUserByEmail", email);
     }
