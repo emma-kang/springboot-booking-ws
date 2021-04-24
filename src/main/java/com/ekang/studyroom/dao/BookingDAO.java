@@ -18,6 +18,10 @@ public class BookingDAO {
         return sqlSession.selectOne(NAMESPACE + "getBookingInfoByUserId", userId);
     }
 
+    public BookingDTO getBookingInfoByBookingId(int bookId) {
+        return sqlSession.selectOne(NAMESPACE + "getBookingInfoByBookingId", bookId);
+    }
+
     public List<BookingDTO> getBookingInfoByRoom(int roomId) {
         return sqlSession.selectList(NAMESPACE + "getBookingInfoByRoom", roomId);
     }

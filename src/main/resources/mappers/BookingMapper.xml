@@ -6,6 +6,9 @@
     <select id="getBookingInfoByUserId" resultType="com.ekang.studyroom.dto.BookingDTO">
         SELECT * FROM booking WHERE user_id = #{userId}
     </select>
+    <select id="getBookingInfoByBookingId" resultType="com.ekang.studyroom.dto.BookingDTO">
+        SELECT * FROM booking WHERE booking_id = #{bookId}
+    </select>
     <select id="getBookingInfoByRoom" resultType="com.ekang.studyroom.dto.BookingDTO">
         SELECT * FROM booking WHERE room_id = #{roomId}
     </select>
