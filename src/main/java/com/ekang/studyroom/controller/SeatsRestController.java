@@ -1,6 +1,6 @@
 package com.ekang.studyroom.controller;
 
-import com.ekang.studyroom.dao.SeatsDAO;
+import com.ekang.studyroom.SeatsDAO;
 import com.ekang.studyroom.dto.SeatsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
