@@ -1,7 +1,6 @@
 package com.ekang.studyroom.service;
 
 import com.ekang.studyroom.BookingDAO;
-import com.ekang.studyroom.controller.BookingRestController;
 import com.ekang.studyroom.dto.BookingDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
