@@ -1,4 +1,4 @@
-package com.ekang.studyroom.dao;
+package com.ekang.studyroom;
 
 import com.ekang.studyroom.dto.UsersDTO;
 import org.apache.ibatis.session.SqlSession;
